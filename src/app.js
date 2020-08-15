@@ -3,7 +3,6 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-const { check } = require('yargs')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -31,6 +30,15 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
+        name: 'Taufiq Azam'
+    })
+})
+
+
+app.get('/help', (req, res) => {
+    res.render('help', {
+        helpText: 'This is some helpful text.',
+        title: 'Help',
         name: 'Taufiq Azam'
     })
 })
